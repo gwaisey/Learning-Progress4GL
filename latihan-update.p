@@ -1,0 +1,2 @@
+DEF VAR vInputNik AS CHAR LABEL "Input NIK" .
+UPDATE vInputNIK. 
