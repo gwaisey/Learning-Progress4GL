@@ -4,12 +4,12 @@ DEFINE VARIABLE vBaris AS INTEGER.
 DEFINE VARIABLE vKolom AS INTEGER.
 DEFINE VARIABLE vHasil AS CHARACTER FORMAT "x(20)".
 
-/* Menggunakan FORMAT ">>9" agar angka 4 tidak terlalu jauh dari label */
+
 DISPLAY "Angka :" AT 2 vAngka FORMAT ">>9" SKIP
         "Hasil :" AT 2 SKIP
         WITH FRAME fr6 NO-LABELS NO-BOX.
 
-/* Frame isi tetap menggunakan 10 DOWN untuk menampung baris */
+
 FORM 
     WITH FRAME frIsi 10 DOWN NO-LABELS NO-BOX.
 
