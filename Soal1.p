@@ -10,8 +10,7 @@ DO i = 1 TO LENGTH(vKalimat):
             vJumlah = vJumlah + 1.
             END.
 
-            /* DISPLAY dengan FORMAT x(20) supaya tidak terpotong (selamatd...)
-*/
+            /* DISPLAY dengan FORMAT x(20) supaya tidak terpotong */
 DISPLAY
     vKalimat LABEL "Kalimat" FORMAT "x(20)"
         vAbjad   LABEL "Abjad"   FORMAT "x(5)"
