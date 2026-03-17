@@ -15,4 +15,11 @@ DISPLAY
     vKalimat LABEL "Kalimat" FORMAT "x(20)"
         vAbjad   LABEL "Abjad"   FORMAT "x(5)"
             vJumlah  LABEL "Jumlah"  FORMAT ">>9"
-                WITH FRAME frSoal1 SIDE-LABELS. 
+                WITH FRAME frSoal1 SIDE-LABELS.
+
+/* Output */
+/*
++------------------------------------------------------+
+¦Kalimat: selamatdatang        Abjad: a     Jumlah: 4  ¦
++------------------------------------------------------+
+*/
