@@ -58,7 +58,7 @@ END.
 /* Menampilkan hasil string dengan huruf besar dan kecil yang sudah ditukar */
 MESSAGE "Hasil : " + cResult VIEW-AS ALERT-BOX.
 
-/* Output */
+/* Output: */
 /*
 +------------------------------------------------------------+
 ¦Input                                                       ¦
