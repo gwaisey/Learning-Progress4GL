@@ -27,7 +27,9 @@ DO i = iInput TO 1 BY -1:
       
       /* Pindah ke baris berikutnya dalam frame */
       DOWN WITH FRAME frRes.
-        END.    
+        END. 
+
+        
 /* Output */
 /*
 Input: 4
