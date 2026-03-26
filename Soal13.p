@@ -45,7 +45,7 @@ END.
 MESSAGE "Hasil : " + cResult VIEW-AS ALERT-BOX.
 
 
-/* Output */
+/* Output: */
 /*
 +----------+
 ¦  Deret ke¦
