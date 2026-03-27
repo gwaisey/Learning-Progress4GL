@@ -1,15 +1,4 @@
    /* 1. Program hitung jumlah abjad */
-/* Mendeklarasikan variabel kalimat yang akan dicari abjadnya */
-DEFINE VARIABLE vKalimat AS CHARACTER INITIAL "selamatdatang".
-
-/* Mendeklarasikan variabel abjad yang ingin dihitung kemunculannya */
-DEFINE VARIABLE vAbjad   AS CHARACTER INITIAL "a".
-
-/* Mendeklarasikan variabel penampung jumlah kemunculan abjad */
-DEFINE VARIABLE vJumlah AS INTEGER INITIAL 0.
-
-/* Variabel counter untuk perulangan */
-DEFINE VARIABLE i AS INTEGER.
 
 /* Agar user bisa menginput secara dinamis */
 UPDATE vKalimat LABEL "Kalimat" FORMAT "x(20)".
@@ -31,5 +20,12 @@ DISPLAY
 
 /* Output */
 /*
-
++-----------------------------+
+¦Kalimat              Abjad   ¦
+¦-------------------- --------¦
+¦POLYTRON             o       ¦
++-----------------------------+
++------------------------------------------------------+
+¦Kalimat: POLYTRON             Abjad: o     Jumlah: 2  ¦
++------------------------------------------------------+                             
 */
