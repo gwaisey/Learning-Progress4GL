@@ -1,6 +1,6 @@
 /* 4. Program Konversi Angka ke Pembilang */
 /* Mendeklarasikan variabel angka yang akan dikonversi menjadi terbilang */
-DEFINE VARIABLE vAngka AS DECIMAL INITIAL 12500.
+DEFINE VARIABLE vAngka AS DECIMAL INITIAL 0.
 
 /* Variabel penampung hasil konversi terbilang */
 DEFINE VARIABLE vHasil AS CHARACTER FORMAT "x(60)".
@@ -41,17 +41,26 @@ FUNCTION Terbilang RETURNS CHARACTER (INPUT pAngka AS DECIMAL):
     RETURN "".
 END FUNCTION.
 
+/* Meminta user menginput angka */
+ UPDATE vAngka LABEL "Masukkan Angka".  
+
 /* Memanggil fungsi Terbilang dan menambahkan kata "rupiah" di akhir */
 vHasil = Terbilang(vAngka) + " rupiah".
 
 /* Menampilkan angka dalam rupiah dan hasil terbilangnya */
 DISPLAY 
     "Angka dalam Rupiah" AT 2 ":" AT 21 vAngka FORMAT ">>,>>>,>>9" SKIP
-    "Pembilang"          AT 2 ":" AT 21 vHasil FORMAT "x(50)"
+    "Pembilang"          AT 2 ":" AT 21 vHasil FORMAT "x(80)"
     WITH FRAME frSoal4 NO-LABELS NO-BOX WIDTH 80.
 
 /* Output */
 /*
- Angka dalam Rupiah :     12,500
- Pembilang          : dua belas ribu lima ratus   rupiah      
++--------------+
+¦Masukkan Angka¦
+¦--------------¦
+¦     99,999.00¦
++--------------+
+ Angka dalam Rupiah :     99,999
+ Pembilang          :
+sembilan puluh sembilan ribu sembilan ratus sembilan puluh sembilan rupiah    
 */
