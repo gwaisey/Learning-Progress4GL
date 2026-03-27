@@ -9,6 +9,9 @@ DEFINE VARIABLE vKolom AS INTEGER.
 /* Variabel penampung hasil deret per baris */
 DEFINE VARIABLE vHasil AS CHARACTER FORMAT "x(20)".
 
+/* Meminta user input angka secara dinamis */
+UPDATE vAngka LABEL "Masukkan Angka".
+
 /* Menampilkan header angka dan label hasil */
 DISPLAY "Angka :" AT 2 vAngka FORMAT ">>9" SKIP
         "Hasil :" AT 2 SKIP
