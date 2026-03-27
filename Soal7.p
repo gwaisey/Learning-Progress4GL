@@ -21,6 +21,10 @@ DEFINE VARIABLE vChar    AS CHARACTER.
 /* Variabel penampung nilai konter yang sedang berjalan */
 DEFINE VARIABLE vNextVal AS CHARACTER.
 
+/* Agar user bisa input secara dinamis */
+UPDATE vAwal LABEL "Nilai Awal: " FORMAT "x(4)".
+UPDATE vIterasi LABEL "Iterasi: ". 
+
 /* Menampilkan nilai awal dan jumlah iterasi sebagai header */
 DISPLAY "Nilai Awal:" AT 2 vAwal FORMAT "x(4)" SKIP
         "Iterasi   :" AT 2 vIterasi FORMAT ">>9" 
