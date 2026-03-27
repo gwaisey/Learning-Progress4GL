@@ -11,6 +11,10 @@ DEFINE VARIABLE vJumlah AS INTEGER INITIAL 0.
 /* Variabel counter untuk perulangan */
 DEFINE VARIABLE i AS INTEGER.
 
+/* Agar user bisa menginput secara dinamis */
+UPDATE vKalimat LABEL "Kalimat" FORMAT "x(20)".
+UPDATE vAbjad LABEL "Abjad". 
+
 /* Loop untuk mengecek setiap huruf satu per satu */
 DO i = 1 TO LENGTH(vKalimat):
     /* Jika karakter pada posisi i sama dengan abjad yang dicari, tambah jumlah */
@@ -27,7 +31,5 @@ DISPLAY
 
 /* Output */
 /*
-+------------------------------------------------------+
-¦Kalimat: selamatdatang        Abjad: a     Jumlah: 4  ¦
-+------------------------------------------------------+
+
 */
