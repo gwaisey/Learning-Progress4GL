@@ -1,53 +1,49 @@
 /* 9. Buat program pola simbol */
-/* Mendeklarasikan variabel jumlah iterasi baris dan kolom yang akan ditampilkan */
-DEFINE VARIABLE vIterasi AS INTEGER INITIAL 5.
+DEFINE VARIABLE vGanjil  AS CHARACTER FORMAT "x(1)" INITIAL "+".
+DEFINE VARIABLE vGenap   AS CHARACTER FORMAT "x(1)" INITIAL "=".
+DEFINE VARIABLE vIterasi AS INTEGER   FORMAT ">>9"  INITIAL 5.
 
-/* Variabel counter untuk baris dan kolom */
-DEFINE VARIABLE i AS INTEGER.
-DEFINE VARIABLE j AS INTEGER.
+DEFINE VARIABLE i      AS INTEGER.
+DEFINE VARIABLE j      AS INTEGER.
+DEFINE VARIABLE vBaris AS CHARACTER FORMAT "x(20)".
 
-/* Variabel penampung hasil pola per baris */
-DEFINE VARIABLE vBaris AS CHARACTER FORMAT "x(10)".
+/* 1. UPDATE di baris pertama */
+UPDATE 
+    vGanjil  LABEL "Ganjil" 
+    vGenap   LABEL "Genap" 
+    vIterasi LABEL "Iterasi"
+    WITH SIDE-LABELS FRAME frInput TITLE " Input " ROW 1.
 
-/* Menampilkan header: simbol ganjil, genap, iterasi, dan label hasil */
-DISPLAY "Ganjil"  AT 2 ":" AT 11 "+" AT 13 SKIP
-        "Genap"   AT 2 ":" AT 11 "=" AT 13 SKIP
-        "Iterasi" AT 2 ":" AT 11 STRING(vIterasi) FORMAT "x(3)" AT 13 SKIP
-        "Hasil"   AT 2 ":" AT 11 SKIP 
-        WITH FRAME fr9Header NO-LABELS NO-BOX WIDTH 80.
+/* 2. Tampilkan Label Hasil tepat di baris ke-6 (di luar box) */
+/* Kita buat frame baru tanpa BOX agar tidak ada garis */
+DISPLAY "Hasil :" AT 2 NO-LABEL WITH FRAME frLabel ROW 6 NO-BOX.
 
-/* Loop untuk setiap baris sebanyak vIterasi */
+/* 3. Tampilkan isi polanya tepat di baris ke-7 dan seterusnya */
 DO i = 1 TO vIterasi:
     vBaris = "".
-    
-    /* Loop untuk setiap kolom sebanyak 5 */
     DO j = 1 TO 5:
-        
-        /* Jika jumlah posisi baris dan kolom genap, tampilkan "+" */
-        /* Jika ganjil, tampilkan "=" */
-        /* Logika ini menghasilkan pola selang-seling "+" dan "=" */
         IF (i + j) MOD 2 = 0 THEN 
-        vBaris = vBaris + "+".
+            vBaris = vBaris + vGanjil.
         ELSE 
-        vBaris = vBaris + "=".
+            vBaris = vBaris + vGenap.
     END.
     
-    /* Tampilkan hasil pola baris saat ini pada posisi kolom 13 */
-    DISPLAY vBaris AT 13 NO-LABEL WITH FRAME fr9Body 10 DOWN NO-BOX.
-    
-    /* Pindah ke baris berikutnya dalam frame */
-    DOWN WITH FRAME fr9Body.
+    /* Gunakan FRAME frIsi yang dimulai dari baris ke-7 */
+    DISPLAY vBaris AT 11 NO-LABEL WITH FRAME frIsi 20 DOWN NO-BOX ROW 7.
+    DOWN WITH FRAME frIsi.
 END.
 
 /* Output */
 /*
- Ganjil   : +
- Genap    : =
- Iterasi  : 5
- Hasil    :
-            +=+=+
-            =+=+=
-            +=+=+
-            =+=+=
-            +=+=+
++------------ Input ------------+
+¦Ganjil: + Genap: = Iterasi: 5  ¦
++-------------------------------+
+
+
+ Hasil :
+          +=+=+
+          =+=+=
+          +=+=+
+          =+=+=
+          +=+=+                       
 */
