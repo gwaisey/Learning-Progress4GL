@@ -1,4 +1,4 @@
-/* Program untuk mengganti huruf besar dan kecil dari suatu string */
+/* 14. Program untuk mengganti huruf besar dan kecil dari suatu string */
 
 /* Mendeklarasikan variabel input string dengan panjang maksimal 60 karakter */
 DEFINE VARIABLE cInput    AS CHARACTER NO-UNDO FORMAT "X(60)".
